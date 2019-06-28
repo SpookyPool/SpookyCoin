@@ -17,23 +17,23 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 10; // seconds
-const uint64_t DIFFICULTY_TARGET_V2                          = 20; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 30; // seconds
+const uint64_t DIFFICULTY_TARGET_V2                          = 30; // seconds
 
 /* Height to swap to DIFFICULTY_TARGET_V2 */
-const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 700000;
+const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 10000;
 
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 8411;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x281a;
 const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 120;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 6 * DIFFICULTY_TARGET;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(10000000000000000);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(42000000000);
 
 const uint32_t EMISSION_SPEED_FACTOR                         = 23;
 const uint32_t EMISSION_SPEED_FACTOR_V2                      = 24;
@@ -84,11 +84,11 @@ const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
 
 const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 2;
 
-const uint64_t MINIMUM_FEE                                   = UINT64_C(10);
+const uint64_t MINIMUM_FEE                                   = UINT64_C(100);
 
 /* This section defines our minimum and maximum mixin counts required for transactions */
 const uint64_t MINIMUM_MIXIN_V0                              = 0;
-const uint64_t MAXIMUM_MIXIN_V0                              = 7;
+const uint64_t MAXIMUM_MIXIN_V0                              = 3;
 
 /* The mixin to use by default with zedwallet and turtle-service */
 const uint64_t DEFAULT_MIXIN_V0                              = 3;
@@ -137,7 +137,7 @@ static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 /* Block heights we are going to have hard forks at */
 const uint64_t FORK_HEIGHTS[] =
 {
-    700000,
+    1051200,
 };
 
 /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK */
@@ -164,7 +164,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "DeroGold";
+const char     CRYPTONOTE_NAME[]                             = "SpookyCoin";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -219,18 +219,14 @@ const uint64_t DATABASE_READ_BUFFER_MB_DEFAULT_SIZE          = 1024;          //
 const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES               = 500;           // 500 files
 const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT     = 10;            // 10 DB threads
 
-const char     LATEST_VERSION_URL[]                          = "https://github.com/derogold/derogold/releases";
-const std::string LICENSE_URL                                = "https://github.com/derogold/derogold/blob/master/LICENSE";
+const char     LATEST_VERSION_URL[]                          = "https://github.com/SpookyCoin/SpookyCoin/releases";
+const std::string LICENSE_URL                                = "https://github.com/SpookyCoin/SpookyCoin/blob/master/LICENSE";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
-    {  0x20, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6c, 0x6c, 0x20, 0x67, 0x65, 0x6e, 0x74, 0x6f, 0x6f, 0x20  }
+    {  0x20, 0x69, 0x6e, 0x73, 0x78, 0x28, 0x6c, 0x6c, 0x20, 0x67, 0x65, 0x6e, 0x74, 0x6f, 0x6f, 0x20  }
 };
 
 const char* const SEED_NODES[] = {
-    "97.64.253.98:42069", // morpheus
-    "207.180.227.16:42069", // explorer.dego.gq
-    "5.172.219.174:42069", //sniperviperman // Edited as requested by sniperviperman.
-    "149.129.97.195:42069", // netmebtc
-    "91.239.237.54:42069", // Leo Cuvée
+    "94.211.137.5:11420", // morpheus
 };
 } // CryptoNote
