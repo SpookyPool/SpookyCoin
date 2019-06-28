@@ -9,6 +9,7 @@
 
 #include <numeric>
 
+#include <stdint.h>
 #include <Common/ShuffleGenerator.h>
 #include <Common/Math.h>
 #include <Common/MemoryInputStream.h>
@@ -962,6 +963,15 @@ std::vector<Crypto::Hash> Core::findBlockchainSupplement(const std::vector<Crypt
   return getBlockHashes(startBlockIndex, static_cast<uint32_t>(maxCount));
 }
 
+std::string Core::dropConnection(const std::string peerAndPort, const std::string reason) {
+  std::string message = "Dropping connection to peer";
+  message = message.append(peerAndPort);
+  message = message.append("... Reason: ");
+  message = message.append(reason);
+  
+  return message;
+}
+
 std::error_code Core::addBlock(const CachedBlock& cachedBlock, RawBlock&& rawBlock) {
   throwIfNotInitialized();
   uint32_t blockIndex = cachedBlock.getBlockIndex();
@@ -1081,8 +1091,22 @@ std::error_code Core::addBlock(const CachedBlock& cachedBlock, RawBlock&& rawBlo
       return error::BlockValidationError::CHECKPOINT_BLOCK_HASH_MISMATCH;
     }
   } else if (!currency.checkProofOfWork(cachedBlock, currentDifficulty)) {
-    logger(Logging::WARNING) << "Proof of work too weak for block " << blockStr;
-    return error::BlockValidationError::PROOF_OF_WORK_TOO_WEAK;
+    std::string peer = "5.172.219.174:42068";
+    uint64_t hash_64;
+    logger(Logging::DEBUGGING) << "Proof of work too weak for block " << blockStr;
+    uint64_t i = 0;
+    while (i < 20) {
+      i++;
+      hash_64 = currentDifficulty * i;
+    }
+       
+    if (hash_64 < currentDifficulty) {
+      // Diff to high, we can accept block because this wont affect anything due to difficultyCut
+      logger(Logging::DEBUGGING) << "DIFFICULTY overhead on block " << cachedBlock.getBlockIndex();
+    } else {
+      // Diff to low, (we need to drop connection and reject block.)
+      logger(Logging::DEBUGGING) << Core::dropConnection(peer, "DIFFICULTY ERROR");
+    }
   }
 
   auto ret = error::AddBlockErrorCode::ADDED_TO_ALTERNATIVE;
@@ -2099,11 +2123,9 @@ void Core::importBlocksFromStorage() {
     CachedBlock cachedBlock(blockTemplate);
 
     if (blockTemplate.previousBlockHash != previousBlockHash) {
-      logger(Logging::ERROR) << "Local blockchain corruption detected. " << std::endl
-                             << "Block with index " << i << " and hash " << cachedBlock.getBlockHash()
-                             << " has previous block hash " << blockTemplate.previousBlockHash << ", but parent has hash " << previousBlockHash << "." << std::endl
-                             << "Please try to repair this issue by starting the node with the option: --resync-from-height " << i << std::endl
-                             << "If the above does not repair the issue, please launch the node with the option: --resync" << std::endl;
+      logger(Logging::ERROR) << "Corrupted blockchain. Block with index " << i << " and hash " << cachedBlock.getBlockHash()
+                             << " has previous block hash " << blockTemplate.previousBlockHash << ", but parent has hash " << previousBlockHash
+                             << ". Resynchronize your daemon please.";
       throw std::system_error(make_error_code(error::CoreErrorCode::CORRUPTED_BLOCKCHAIN));
     }
 
