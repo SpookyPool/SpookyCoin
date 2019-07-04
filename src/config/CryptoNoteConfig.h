@@ -227,7 +227,7 @@ const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 };
 
 const char* const SEED_NODES[] = {
-    "94.211.137.5:11420", // MunchieHigh420-Linux
-    "85.214.199.51:11420", // MunchieHigh420-Win64
+    "94.211.137.5:11420", // MunchieHigh420-Neeritter
+    "84.30.12.206:11420", // MunchieHigh420-Stramproy
 };
 } // CryptoNote
