@@ -1,4 +1,5 @@
-# <img src="http://tradelly.co/assets/img/coins/spky.ico" style="height: 45px"> SpookyCoin
+![](http://tradelly.co/assets/img/coins/spky.ico)
+# SpookyCoin
 
 ### Installing
 
