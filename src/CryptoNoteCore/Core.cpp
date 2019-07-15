@@ -2,6 +2,8 @@
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The Galaxia Project Developers
 // Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2019, The SpookyCoin Developers
+// Copyright (c) 2018 The SpookyCoin Developers.
 //
 // Please see the included LICENSE file for more information.
 
@@ -968,7 +970,7 @@ std::string Core::dropConnection(const std::string peerAndPort, const std::strin
   message = message.append(peerAndPort);
   message = message.append("... Reason: ");
   message = message.append(reason);
-  
+
   return message;
 }
 
@@ -1099,7 +1101,7 @@ std::error_code Core::addBlock(const CachedBlock& cachedBlock, RawBlock&& rawBlo
       i++;
       hash_64 = currentDifficulty * i;
     }
-       
+
     if (hash_64 < currentDifficulty) {
       // Diff to high, we can accept block because this wont affect anything due to difficultyCut
       logger(Logging::DEBUGGING) << "DIFFICULTY overhead on block " << cachedBlock.getBlockIndex();
@@ -2959,4 +2961,3 @@ std::time_t Core::getStartTime() const
 }
 
 }
-

@@ -1,4 +1,6 @@
 // Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2019, The SpookyCoin Developers
+// Copyright (c) 2018 The SpookyCoin Developers.
 //
 // Please see the included LICENSE file for more information.
 
@@ -17,7 +19,7 @@
 using nlohmann::json;
 
 namespace DaemonConfig{
-  
+
   DaemonConfiguration initConfiguration(const char* path)
   {
     DaemonConfiguration config;
@@ -113,7 +115,7 @@ namespace DaemonConfig{
       {
         config.osVersion = cli["os-version"].as<bool>();
       }
-      
+
       if (cli.count("resync-from-height") > 0)
       {
         config.rewindToHeight = cli["resync-from-height"].as<uint32_t>();
@@ -293,7 +295,7 @@ namespace DaemonConfig{
     std::vector<std::string> peers;
     std::vector<std::string> cors;
     bool updated = false;
-    
+
     for (std::string line; std::getline(data, line);)
     {
       if (line.empty() || std::regex_match(line, item, cfgComment))
@@ -307,7 +309,7 @@ namespace DaemonConfig{
         {
           continue;
         }
-        
+
         cfgKey = item[1].str();
         cfgValue = item[2].str();
 
@@ -331,7 +333,7 @@ namespace DaemonConfig{
           try
           {
             config.logLevel = std::stoi(cfgValue);
-            updated = true;  
+            updated = true;
           }
           catch(std::exception& e)
           {
@@ -449,7 +451,7 @@ namespace DaemonConfig{
         }
         else if (cfgKey.compare("add-exclusive-node") == 0)
         {
-          
+
           exclusiveNodes.push_back(cfgValue);
           config.exclusiveNodes = exclusiveNodes;
           updated = true;
@@ -502,9 +504,9 @@ namespace DaemonConfig{
         }
         else
         {
-          for (auto c: cfgKey) 
+          for (auto c: cfgKey)
           {
-            if (static_cast<unsigned char>(c) > 127) 
+            if (static_cast<unsigned char>(c) > 127)
             {
               throw std::runtime_error("Bad/invalid config file");
             }

@@ -1,6 +1,8 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2019, The SpookyCoin Developers
+// Copyright (c) 2018 The SpookyCoin Developers.
 //
 // Please see the included LICENSE file for more information.
 
@@ -99,7 +101,7 @@ private:
 
     mutable std::mutex m_observedHeightMutex;
     uint32_t m_observedHeight;
-    
+
     mutable std::mutex m_blockchainHeightMutex;
     uint32_t m_blockchainHeight;
 

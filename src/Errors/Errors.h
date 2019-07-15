@@ -1,5 +1,7 @@
 // Copyright (c) 2018, The TurtleCoin Developers
-// 
+// Copyright (c) 2019, The SpookyCoin Developers
+// Copyright (c) 2019 The SpookyCoin Developers.
+//
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -70,7 +72,7 @@ enum ErrorCode
     /* The address is invalid for some other reason (possibly checksum) */
     ADDRESS_NOT_VALID = 15,
 
-    /* The payment ID encoded in the integrated address is not valid */ 
+    /* The payment ID encoded in the integrated address is not valid */
     INTEGRATED_ADDRESS_PAYMENT_ID_INVALID = 16,
 
     /* The fee given is lower than the CryptoNote::parameters::MINIMUM_FEE */
@@ -186,12 +188,12 @@ enum ErrorCode
 
     /* Value given is negative, but must be >= 0
        NOTE: Not used in WalletBackend, only here to maintain API compatibility
-       with turtlecoin-wallet-backend-js */
+       with SpookyCoin-wallet-backend-js */
     NEGATIVE_VALUE_GIVEN = 46,
 
-    /* Key is not 64 char hex 
+    /* Key is not 64 char hex
        NOTE: Not used in WalletBackend, only here to maintain API compatibility
-       with turtlecoin-wallet-backend-js */
+       with SpookyCoin-wallet-backend-js */
     INVALID_KEY_FORMAT = 47,
 
     /* Hash not 64 chars */
@@ -202,7 +204,7 @@ enum ErrorCode
 
     /* Number is a float, not an integer
        NOTE: Not used in WalletBackend, only here to maintain API compatibility
-       with turtlecoin-wallet-backend-js */
+       with SpookyCoin-wallet-backend-js */
     NON_INTEGER_GIVEN = 50,
 };
 

@@ -1,8 +1,8 @@
-![image](https://i.imgur.com/4FlvRAt.png)
+# <img src="http://tradelly.co/assets/img/coins/spky.ico" style="height: 45px"> SpookyCoin
 
 ### Installing
 
-We offer binary images of the latest releases here: https://github.com/derogold/derogold/releases
+We offer binary images of the latest releases here: https://github.com/SpookyCoin/SpookyCoin/releases
 
 If you would like to compile yourself, read on.
 
@@ -29,8 +29,8 @@ If you are using Clang, you will need Clang 6.0 or higher. You will also need li
 - `sudo pip install cmake`
 - `export CC=gcc-8`
 - `export CXX=g++-8`
-- `git clone -b master --single-branch https://github.com/derogold/derogold`
-- `cd derogold`
+- `git clone -b master --single-branch https://github.com/SpookyCoin/SpookyCoin`
+- `cd SpookyCoin`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -39,7 +39,7 @@ If you are using Clang, you will need Clang 6.0 or higher. You will also need li
 The binaries will be in the `src` folder when you are complete.
 
 - `cd src`
-- `./DeroGoldd --version`
+- `./SpookyCoind --version`
 
 ##### Ubuntu, using Clang
 
@@ -63,8 +63,8 @@ You need to modify the below command for your version of ubuntu - see https://ap
 - `sudo pip install cmake`
 - `export CC=clang-6.0`
 - `export CXX=clang++-6.0`
-- `git clone -b master --single-branch https://github.com/derogold/derogold`
-- `cd derogold`
+- `git clone -b master --single-branch https://github.com/SpookyCoin/SpookyCoin`
+- `cd SpookyCoin`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -73,7 +73,7 @@ You need to modify the below command for your version of ubuntu - see https://ap
 The binaries will be in the `src` folder when you are complete.
 
 - `cd src`
-- `./DeroGoldd --version`
+- `./SpookyCoind --version`
 
 ##### Generic Linux
 
@@ -82,8 +82,8 @@ Ensure you have the dependencies listed above.
 If you want to use clang, ensure you set the environment variables `CC` and `CXX`.
 See the ubuntu instructions for an example.
 
-- `git clone -b master --single-branch https://github.com/derogold/derogold`
-- `cd derogold`
+- `git clone -b master --single-branch https://github.com/SpookyCoin/SpookyCoin`
+- `cd SpookyCoin`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -92,7 +92,7 @@ See the ubuntu instructions for an example.
 The binaries will be in the `src` folder when you are complete.
 
 - `cd src`
-- `./DeroGoldd --version`
+- `./SpookyCoind --version`
 
 #### OSX/Apple, using GCC
 
@@ -106,8 +106,8 @@ The binaries will be in the `src` folder when you are complete.
 - `brew install --force cmake boost llvm gcc@8`
 - `export CC=gcc-8`
 - `export CXX=g++-8`
-- `git clone -b master --single-branch https://github.com/derogold/derogold`
-- `cd derogold`
+- `git clone -b master --single-branch https://github.com/SpookyCoin/SpookyCoin`
+- `cd SpookyCoin`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -116,7 +116,7 @@ The binaries will be in the `src` folder when you are complete.
 The binaries will be in the `src` folder when you are complete.
 
 - `cd src`
-- `./DeroGoldd --version`
+- `./SpookyCoind --version`
 
 #### OSX/Apple, using Clang
 
@@ -130,8 +130,8 @@ The binaries will be in the `src` folder when you are complete.
 - `brew install --force cmake boost llvm`
 - `export CC=/usr/local/opt/llvm/bin/clang`
 - `export CXX=/usr/local/opt/llvm/bin/clang++`
-- `git clone -b master --single-branch https://github.com/derogold/derogold`
-- `cd derogold`
+- `git clone -b master --single-branch https://github.com/SpookyCoin/SpookyCoin`
+- `cd SpookyCoin`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -140,7 +140,7 @@ The binaries will be in the `src` folder when you are complete.
 The binaries will be in the `src` folder when you are complete.
 
 - `cd src`
-- `./DeroGoldd --version`
+- `./SpookyCoind --version`
 
 
 #### Windows
@@ -162,13 +162,13 @@ The binaries will be in the `src` folder when you are complete.
 
 If you have errors on this step about not being able to find the following static libraries, you may need to update your cmake. Open 'Visual Studio Installer' and click 'Update'.
 
-- `MSBuild DeroGold.sln /p:Configuration=Release /m`
+- `MSBuild SpookyCoin.sln /p:Configuration=Release /m`
 
 The binaries will be in the `src/Release` folder when you are complete.
 
 - `cd src`
 - `cd Release`
-- `DeroGoldd.exe --version`
+- `SpookyCoind.exe --version`
 
 #### Raspberry Pi 3 B+ (AARCH64/ARM64)
 The following images are known to work. Your operation system image **MUST** be 64 bit.
@@ -183,8 +183,8 @@ Once you have a 64 bit image installed, setup proceeds the same as any Linux dis
 
 ##### Building
 
-- `git clone -b master --single-branch https://github.com/derogold/derogold`
-- `cd derogold`
+- `git clone -b master --single-branch https://github.com/SpookyCoin/SpookyCoin`
+- `cd SpookyCoin`
 - `mkdir build`
 - `cd build`
 - `cmake ..`
@@ -193,7 +193,7 @@ Once you have a 64 bit image installed, setup proceeds the same as any Linux dis
 The binaries will be in the `src` folder when you are complete.
 
 - `cd src`
-- `./DeroGoldd --version`
+- `./SpookyCoind --version`
 
 #### Thanks
-Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project, TurtleCoin Community
+Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project, TurtleCoin Community, SpookyCoin Developers

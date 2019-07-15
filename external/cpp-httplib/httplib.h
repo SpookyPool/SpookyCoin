@@ -3,6 +3,7 @@
 //
 //  Copyright (c) 2017 Yuji Hirose. All rights reserved.
 //  Copyright (c) 2018 The TurtleCoin Developers. All rights reserved.
+
 //  MIT License
 //
 

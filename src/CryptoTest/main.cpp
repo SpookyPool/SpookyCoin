@@ -1,4 +1,6 @@
 // Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2019, The SpookyCoin Developers
+// Copyright (c) 2018 The SpookyCoin Developers.
 //
 // Please see the included LICENSE file for more information.
 
@@ -125,7 +127,7 @@ static inline bool CompareHashes(const Hash leftHash, const std::string right)
 /* Hacky as fuck lmao */
 bool need43BytesOfData(std::string hashFunctionName)
 {
-    return (hashFunctionName.find("v1") != std::string::npos 
+    return (hashFunctionName.find("v1") != std::string::npos
         || hashFunctionName.find("v2") != std::string::npos);
 }
 
@@ -317,7 +319,7 @@ int main(int argc, char** argv)
         TEST_HASH_FUNCTION(cn_slow_hash_v0, CN_SLOW_HASH_V0);
         TEST_HASH_FUNCTION(cn_slow_hash_v1, CN_SLOW_HASH_V1);
         TEST_HASH_FUNCTION(cn_slow_hash_v2, CN_SLOW_HASH_V2);
-        
+
         std::cout << std::endl;
 
         TEST_HASH_FUNCTION(cn_lite_slow_hash_v0, CN_LITE_SLOW_HASH_V0);
@@ -335,7 +337,7 @@ int main(int argc, char** argv)
         TEST_HASH_FUNCTION(cn_dark_lite_slow_hash_v0, CN_DARK_LITE_SLOW_HASH_V0);
         TEST_HASH_FUNCTION(cn_dark_lite_slow_hash_v1, CN_DARK_LITE_SLOW_HASH_V1);
         TEST_HASH_FUNCTION(cn_dark_lite_slow_hash_v2, CN_DARK_LITE_SLOW_HASH_V2);
-        
+
         std::cout << std::endl;
 
         TEST_HASH_FUNCTION(cn_turtle_slow_hash_v0, CN_TURTLE_SLOW_HASH_V0);

@@ -1,6 +1,8 @@
 // Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2019, The SpookyCoin Developers
 // Copyright (c) 2018, The DeroGold Association
-// 
+// Copyright (c) 2018 The SpookyCoin Developers.
+//
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -55,7 +57,7 @@ namespace WalletConfig
                                            + ((64 * 11) / 8);
 
     /* The default fee value to use with transactions (in ATOMIC units!) */
-    const uint64_t defaultFee = CryptoNote::parameters::MINIMUM_FEE; 
+    const uint64_t defaultFee = CryptoNote::parameters::MINIMUM_FEE;
 
     /* The minimum fee value to allow with transactions (in ATOMIC units!) */
     const uint64_t minimumFee = CryptoNote::parameters::MINIMUM_FEE;

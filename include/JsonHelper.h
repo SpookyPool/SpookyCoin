@@ -1,5 +1,7 @@
 // Copyright (c) 2018, The TurtleCoin Developers
-// 
+// Copyright (c) 2019, The SpookyCoin Developers
+
+//
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -12,7 +14,7 @@ typedef rapidjson::GenericObject<true, rapidjson::GenericValue<rapidjson::UTF8<c
 typedef rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> JSONValue;
 
 static const std::string kTypeNames[] =
-{ 
+{
     "Null", "False", "True", "Object", "Array", "String", "Number"
 };
 

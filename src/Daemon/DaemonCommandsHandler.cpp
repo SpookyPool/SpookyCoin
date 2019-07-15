@@ -1,6 +1,8 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2018, The TurtleCoin Developers
-// 
+// Copyright (c) 2019, The SpookyCoin Developers
+// Copyright (c) 2018 The SpookyCoin Developers.
+//
 // Please see the included LICENSE file for more information.
 
 #include <boost/format.hpp>
@@ -318,9 +320,9 @@ bool DaemonCommandsHandler::status(const std::vector<std::string>& args)
   if (!m_prpc_server->on_get_info(ireq, iresp) || iresp.status != CORE_RPC_STATUS_OK) {
     std::cout << "Problem retrieving information from RPC server." << std::endl;
     return false;
-  } 
+  }
 
   std::cout << Utilities::get_status_string(iresp) << std::endl;
-  
+
   return true;
 }
