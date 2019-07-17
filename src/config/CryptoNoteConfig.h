@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018-2019, The TurtleCoin Developers
 // Copyright (c) 2018-2019, The DeroGold Association
+// Copyright (c) 2019, The SpookyCoin Developers
 //
 // Please see the included LICENSE file for more information.
 
@@ -58,7 +59,7 @@ const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(50000000
 --print-genesis-tx --genesis-block-reward-address <premine wallet address>
 
 For example:
-TurtleCoind --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW
+SpookyCoind --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW
 
 * Take the hash printed, and replace it with the hash below in GENESIS_COINBASE_TX_HEX
 
@@ -71,7 +72,7 @@ const char GENESIS_COINBASE_TX_HEX[] = "017801ff00010002a40e83f44198285b3036a7cc
 static_assert(sizeof(GENESIS_COINBASE_TX_HEX)/sizeof(*GENESIS_COINBASE_TX_HEX) != 1, "GENESIS_COINBASE_TX_HEX must not be empty.");
 
 /* This is the unix timestamp of the first "mined" block (technically block 2, not the genesis block)
-   You can get this value by doing "print_block 2" in TurtleCoind. It is used to know what timestamp
+   You can get this value by doing "print_block 2" in SpookyCoind. It is used to know what timestamp
    to import from when the block height cannot be found in the node or the node is offline. */
 const uint64_t GENESIS_BLOCK_TIMESTAMP                       = 1545261161;
 

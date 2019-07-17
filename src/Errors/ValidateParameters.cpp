@@ -1,5 +1,7 @@
 // Copyright (c) 2018, The TurtleCoin Developers
-// 
+// Copyright (c) 2019, The SpookyCoin Developers
+// Copyright (c) 2019 The SpookyCoin Developers.
+//
 // Please see the included LICENSE file for more information.
 
 //////////////////////////////////////
@@ -33,7 +35,7 @@ Error validateFusionTransaction(
     {
         return error;
     }
-    
+
     /* Verify the subwallets to take from are valid and exist in the subwallets */
     if (Error error = validateOurAddresses({subWalletsToTakeFrom}, subWallets); error != SUCCESS)
     {
@@ -119,7 +121,7 @@ Error validateIntegratedAddresses(
         }
 
         /* Grab the address + pid from the integrated address */
-        const auto [extractedAddress, extractedPaymentID] 
+        const auto [extractedAddress, extractedPaymentID]
             = Utilities::extractIntegratedAddressData(address);
 
         /* No payment ID given, set it to the extracted one */
@@ -144,7 +146,7 @@ Error validateHash(const std::string hash)
     }
 
     std::regex hexRegex("[a-zA-Z0-9]{64}");
-    
+
     if (!std::regex_match(hash, hexRegex))
     {
         return HASH_INVALID;
@@ -166,7 +168,7 @@ Error validatePaymentID(const std::string paymentID)
     }
 
     std::regex hexRegex("[a-zA-Z0-9]{64}");
-    
+
     if (!std::regex_match(paymentID, hexRegex))
     {
         return PAYMENT_ID_INVALID;
@@ -273,7 +275,7 @@ Error validateDestinations(
     {
         return error;
     }
-    
+
     return SUCCESS;
 }
 

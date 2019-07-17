@@ -1,4 +1,6 @@
 // Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2019, The SpookyCoin Developers
+// Copyright (c) 2018 The SpookyCoin Developers.
 //
 // Please see the included LICENSE file for more information.
 
@@ -42,7 +44,7 @@ namespace DaemonConfig {
       version = false;
       osVersion = false;
       printGenesisTx = false;
-      dumpConfig = false; 
+      dumpConfig = false;
       resync = false;
     }
 
@@ -68,7 +70,7 @@ namespace DaemonConfig {
     int dbMaxOpenFiles;
     int dbWriteBufferSizeMB;
     int dbReadCacheSizeMB;
-    
+
     uint32_t rewindToHeight;
 
     bool noConsole;

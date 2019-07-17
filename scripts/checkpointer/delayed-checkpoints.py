@@ -46,7 +46,7 @@ def rpc(method, params={}):
         }
     resp = requests.post(base_url, data=json.dumps(payload)).json()
     if 'result' not in resp:
-        print ('Unexpected response, make sure DeroGoldd is running with block explorer enabled'
+        print ('Unexpected response, make sure SpookyCoind is running with block explorer enabled'
                , resp)
         sys.exit(-1)
     else:

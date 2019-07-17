@@ -1,5 +1,7 @@
 // Copyright (c) 2018, The TurtleCoin Developers
-// 
+// Copyright (c) 2019, The SpookyCoin Developers
+
+//
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -27,8 +29,8 @@ namespace WalletTypes
     };
 
     /* A coinbase transaction (i.e., a miner reward, there is one of these in
-       every block). Coinbase transactions have no inputs. 
-       
+       every block). Coinbase transactions have no inputs.
+
        We call this a raw transaction, because it is simply key images and
        amounts */
     struct RawCoinbaseTransaction
@@ -105,7 +107,7 @@ namespace WalletTypes
 
         /* The transaction key we took from the key outputs */
         Crypto::PublicKey key;
-        
+
         /* If spent, what height did we spend it at. Used to remove spent
            transaction inputs once they are sure to not be removed from a
            forked chain. */
@@ -309,8 +311,8 @@ namespace WalletTypes
             /* A map of public keys to amounts, since one transaction can go to
                multiple addresses. These can be positive or negative, for example
                one address might have sent 10,000 TRTL (-10000) to two recipients
-               (+5000), (+5000) 
-               
+               (+5000), (+5000)
+
                All the public keys in this map, are ones that the wallet container
                owns, it won't store amounts belonging to random people */
             std::unordered_map<Crypto::PublicKey, int64_t> transfers;

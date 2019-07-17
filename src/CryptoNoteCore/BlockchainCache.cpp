@@ -1,6 +1,7 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018-2019, The TurtleCoin Developers
+// Copyright (c) 2018 The SpookyCoin Developers.
 //
 // Please see the included LICENSE file for more information.
 
@@ -612,7 +613,7 @@ std::vector<RawBlock> BlockchainCache::getBlocksByHeight(
     uint64_t startOffset = std::max(startHeight, static_cast<uint64_t>(startIndex));
 
     uint64_t blockCount = storage->getBlockCount();
-    
+
     /* Make sure we don't overflow the storage (for example, the block might
        not exist yet) */
     if (endHeight > startIndex + blockCount)
@@ -631,9 +632,9 @@ std::vector<RawBlock> BlockchainCache::getBlocksByHeight(
             << "\n======= GetBlockByHeight (in memory) ========"
             << "\n* Start height: " << startHeight
             << "\n* End height: " << endHeight
-            << "\n* Start index: " << startIndex 
-            << "\n* Start offset: " << startIndex 
-            << "\n* Block count: " << startIndex 
+            << "\n* Start index: " << startIndex
+            << "\n* Start offset: " << startIndex
+            << "\n* Block count: " << startIndex
             << "\n============================================="
             << "\n\n\n";
 

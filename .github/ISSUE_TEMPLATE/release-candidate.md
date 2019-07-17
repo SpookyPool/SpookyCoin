@@ -5,7 +5,7 @@ about: The purpose of this template is to provide a reproducible testing process
 
 ---
 
-# TurtleCoin <!-- Insert semver # including build number here --> Release Candidate Test Log
+# SpookyCoin <!-- Insert semver # including build number here --> Release Candidate Test Log
 
 Build from: <!-- link to release candidate branch -->
 
@@ -20,7 +20,7 @@ Binaries for Testing:
 - [ ] `Version.h.in` updated to correct semver value
 - [ ] Release Notes Prepared (<!-- link to proposed copy of release notes -->)
 
-### TurtleCoind Tests
+### SpookyCoind Tests
 - Daemon connects to local DB
   - [ ] Windows
   - [ ] Linux
@@ -57,7 +57,7 @@ Binaries for Testing:
   - [ ] Windows
   - [ ] Linux
   - [ ] MacOS
- 
+
 ### ZedWallet Tests
 - Connect to local daemon
   - [ ] Windows
