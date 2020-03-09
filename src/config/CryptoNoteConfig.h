@@ -209,8 +209,8 @@ namespace CryptoNote {
     };
 
     const char* const SEED_NODES[] = {
-        "94.211.137.5:11420", // SpookyPool.nl - MunchieHigh420
+        "94.211.151.88:11420",  // SpookyPool.nl - MunchieHigh420
         "142.93.239.206:11420", // Trinity SpookyPool.nl - MunchieHigh420
-        "94.214.85.66:11420" // Gabcraftia
+        "94.214.85.66:11420"    // Gabcraftia
     };
 } // CryptoNote
