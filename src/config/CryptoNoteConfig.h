@@ -17,24 +17,24 @@
 
 namespace CryptoNote {
     namespace parameters {
-        const uint64_t DIFFICULTY_TARGET                             = 30; // seconds
-        const uint64_t DIFFICULTY_TARGET_V2                          = 30; // Seconds
+        const uint64_t DIFFICULTY_TARGET                             = 1; // seconds
+        const uint64_t DIFFICULTY_TARGET_V2                          = 1; // Seconds
 
         const uint64_t DIFFICULTY_TARGET_V2_HEIGHT                   = 1051200;
 
         const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
         const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
         const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-        const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x281a;
-        const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 120;
+        const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x7a59e9f;
+        const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 10;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 6 * DIFFICULTY_TARGET;
 
         const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 
-        const uint64_t MONEY_SUPPLY                                  = UINT64_C(42000000000); // 420 Million SPKY
+        const uint64_t MONEY_SUPPLY                                  = UINT64_C(200'000'000); // 420 Million SPKY
 
-        const uint32_t EMISSION_SPEED_FACTOR                         = 23;
-        const uint32_t EMISSION_SPEED_FACTOR_V2                      = 24;
+        const uint32_t EMISSION_SPEED_FACTOR                         = 27;
+        const uint32_t EMISSION_SPEED_FACTOR_V2                      = 27;
 
         static_assert(EMISSION_SPEED_FACTOR    <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
         static_assert(EMISSION_SPEED_FACTOR_V2 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
@@ -55,18 +55,18 @@ namespace CryptoNote {
         /* This is the unix timestamp of the first "mined" block (technically block 2, not the genesis block)
         You can get this value by doing "print_block 2" in SpookyCoind. It is used to know what timestamp
         to import from when the block height cannot be found in the node or the node is offline. */
-        const uint64_t GENESIS_BLOCK_TIMESTAMP                       = 1545261161;
+        const uint64_t GENESIS_BLOCK_TIMESTAMP                       = 1585869846;
 
-        const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
+        const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 10;
         const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
         const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 20000;
         const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
         const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
         const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
 
-        const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 2;
+        const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 8;
 
-        const uint64_t MINIMUM_FEE                                   = UINT64_C(100);
+        const uint64_t MINIMUM_FEE                                   = UINT64_C(1000);
 
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V0                              = 0;
@@ -119,7 +119,7 @@ namespace CryptoNote {
         /* Block heights we are going to have hard forks at */
         const uint64_t FORK_HEIGHTS[] =
         {
-            1051200,
+            31536000,
         };
 
         /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK */
@@ -146,7 +146,7 @@ namespace CryptoNote {
         const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
     }
 
-    const char     CRYPTONOTE_NAME[]                             = "SpookyCoin";
+    const char     CRYPTONOTE_NAME[]                             = "TigerCoin";
 
     const uint8_t  TRANSACTION_VERSION_1                         =  1;
     const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -165,9 +165,9 @@ namespace CryptoNote {
     const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
     const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-    const int      P2P_DEFAULT_PORT                              =  11420;
-    const int      RPC_DEFAULT_PORT                              =  11421;
-    const int      SERVICE_DEFAULT_PORT                          =  11422;
+    const int      P2P_DEFAULT_PORT                              =  12500;
+    const int      RPC_DEFAULT_PORT                              =  12501;
+    const int      SERVICE_DEFAULT_PORT                          =  12502;
 
     const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
     const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -201,16 +201,14 @@ namespace CryptoNote {
     const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES               = 125;           // 125 files
     const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT     = 4;            // 10 DB threads
 
-    const char     LATEST_VERSION_URL[]                          = "https://github.com/SpookyCoin/SpookyCoin/releases";
-    const std::string LICENSE_URL                                = "https://github.com/SpookyCoin/SpookyCoin/blob/master/LICENSE";
+    const char     LATEST_VERSION_URL[]                          = "https://github.com/SpookyPool/TigerCoin/releases";
+    const std::string LICENSE_URL                                = "https://github.com/SpookyPool/TigerCoin/blob/master/LICENSE";
     const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
     {
-        {  0x20, 0x69, 0x6e, 0x73, 0x78, 0x28, 0x6c, 0x6c, 0x20, 0x67, 0x65, 0x6e, 0x74, 0x6f, 0x6f, 0x20  }
+        {  0x60, 0x29, 0x6a, 0x23, 0x71, 0x28, 0x6c, 0x6c, 0x40, 0x67, 0x65, 0x6b, 0x20, 0x6b, 0x6f, 0x20  }
     };
 
     const char* const SEED_NODES[] = {
-        "94.211.151.88:11420",  // SpookyPool.nl - MunchieHigh420
-        "142.93.239.206:11420", // Trinity SpookyPool.nl - MunchieHigh420
-        "94.214.85.66:11420"    // Gabcraftia
+        "94.211.151.88:12500"
     };
 } // CryptoNote
