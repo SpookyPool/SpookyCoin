@@ -49,7 +49,7 @@ namespace CryptoNote {
            Swap:         500,000 SPKY
            ========================== */
 
-        const char GENESIS_COINBASE_TX_HEX[] = "017801ff00010002a40e83f44198285b3036a7ccef7ff155375b34c7cc8552ceea8721aefa8229752101aaad54aade16d9a4542e0efb3fdf32d86daadc16f1c07f1e363dd0e152a81def";
+        const char GENESIS_COINBASE_TX_HEX[] = "010a01ff000180e1eb17020c246dc7498cd7735bd471cdb2686dbb87e2d479c305c40df03144de954792b921010c135b0bc4f2896801ec3ab9778c2cd7d7943cc8cfe4c397d18ace7c9c32f221";
         static_assert(sizeof(GENESIS_COINBASE_TX_HEX)/sizeof(*GENESIS_COINBASE_TX_HEX) != 1, "GENESIS_COINBASE_TX_HEX must not be empty.");
 
         /* This is the unix timestamp of the first "mined" block (technically block 2, not the genesis block)
